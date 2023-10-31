@@ -89,11 +89,11 @@
                         </div>
                         <div class="wrapper">
                               <div class="img-hover-zoom">
-                                  <img src="img/life.jpg">
+                                  <img src="images/life.jpg">
                                   <div class="overlay-text">Life Insurance</div>
                               </div>
                               <div class="img-hover-zoom2">
-                                  <img src="img/finansial2.jpg">
+                                  <img src="images/finansial2.jpg">
                                   <div class="overlay-text">Financial Insurance</div>
                               </div>
                         </div>
@@ -114,7 +114,7 @@
                             <a href="#" class="cta2">Get Started Now</a>
                           </div>
                           <div class="about-img">
-                              <img src="img/asuransi.jpg" alt="Tentang Kami">
+                              <img src="images/asuransi.jpg" alt="Tentang Kami">
                           </div>
                         </div>
                       </section>
