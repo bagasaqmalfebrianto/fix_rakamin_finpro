@@ -72,6 +72,11 @@ Route::Post('/register', [RegisterController::class, 'store']);
 //Logout
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
+//nasabah
+Route::get('/profile', function () {return view('nasabah.profilenasabah');});
+Route::get('/editprofile', function () {return view('nasabah.editprofilenasabah');});
+Route::get('/detailbayar', function () {return view('nasabah.detailbayar');});
+
 // Route::get('/DataPersonal1', function () {return view('dashboard.DataPersonal1');});
 
 Route::get('/RingkasanPolis', function () {
