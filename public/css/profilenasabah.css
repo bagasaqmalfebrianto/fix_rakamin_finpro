@@ -21,7 +21,7 @@ p {
 }
 
 .pay:hover{
-    color: #2F37A4;
+    color: #0198a3;
     text-decoration: none;
 }
 
@@ -42,7 +42,7 @@ header{
     padding: 15px 9%;
     z-index: 100000S;
     border-bottom: 1px solid #ddd;
-    background-color: #2F37A4;
+    background-color: #0198a3;
    
 }
 
@@ -381,7 +381,7 @@ header{
 
 /* FOOTER STYLE */
 .footer-distributed{
-	background: #2F37A4;
+	background: #0198a3;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -591,7 +591,7 @@ header{
         left: -100%;
         width: 300px;
         height: 100vh;
-        background: #2F37A4;
+        background: #0198a3;
         display: flex;
         align-items: center;
         flex-direction: column;

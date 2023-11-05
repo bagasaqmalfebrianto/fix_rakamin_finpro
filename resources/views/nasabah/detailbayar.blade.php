@@ -99,12 +99,10 @@
                                           <tbody>
                                       </table>
                                 </div>
-                                <div class="page">
-                                    <span class="pages">Halaman 1 dari 3 : </span>
-                                    <span class="current">1</span>
-                                    <a class="page larger" title="Halaman 2" href="#">2</a>
-                                    <a class="page larger" title="Halaman 2" href="#">3</a>
-                                    <i class="ri-skip-right-line"></i>
+                                <div class="container-btn">
+                                    <a href="/profile">
+                                        <button class="back-button">Kembali</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

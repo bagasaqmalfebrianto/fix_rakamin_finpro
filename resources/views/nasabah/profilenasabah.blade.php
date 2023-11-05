@@ -136,7 +136,7 @@
                                                 <a href="#" class="table-button1">Aktif</a>
                                               </td>
                                               <td>
-                                                <a href="#" class="table-button">Detail</a>
+                                                <a href="detailpolis" class="table-button">Detail</a>
                                               </td>
                                               <td>
                                                 <a href="detailbayar" class="table-button">Bayar</a>
@@ -152,7 +152,7 @@
                                                 <a href="#" class="table-button1">Aktif</a>
                                               </td>
                                               <td>
-                                                <a href="#" class="table-button">Detail</a>
+                                                <a href="detailpolis" class="table-button">Detail</a>
                                               </td>
                                               <td>
                                                 <a href="detailbayar" class="table-button">Bayar</a>
@@ -161,13 +161,6 @@
                                           </tr>
                                           <tbody>
                                       </table>
-                                </div>
-                                <div class="page">
-                                    <span class="pages">Halaman 1 dari 3 : </span>
-                                    <span class="current">1</span>
-                                    <a class="page larger" title="Halaman 2" href="#">2</a>
-                                    <a class="page larger" title="Halaman 2" href="#">3</a>
-                                    <i class="ri-skip-right-line"></i>
                                 </div>
                             </div>
                         </div>
