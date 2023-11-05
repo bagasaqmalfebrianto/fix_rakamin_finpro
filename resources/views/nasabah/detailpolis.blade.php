@@ -11,7 +11,7 @@
     @yield('css')
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="css\editprofile.css">
+    <link rel="stylesheet" href="css\detailpolis.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -53,59 +53,55 @@
                       <!-- akhir navbar atas -->
                       @yield('isi')
 
-                      <section id="polis" class="polis">
-                        <div class="main">
-                            <div class="card">
-                                <h2>Edit Profil</h2>
-                                <div class="card-body">
-                                    <div class="content-wrapper">
-                                        <img src="images/doona3.jpeg" class="img-left" id="profile-image">
-                                        <form id="edit-profile-form" enctype="multipart/form-data">
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Edit Image</td>
-                                                        <td>:</td>
-                                                        <td>
-                                                            <input type="file" id="image" accept="image/*">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Name</td>
-                                                        <td>:</td>
-                                                        <td><input type="text" id="name" value="Bae Suzy"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>No Royalty Card</td>
-                                                        <td>:</td>
-                                                        <td><input type="text" id="card" value="140810200006" readonly></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Email</td>
-                                                        <td>:</td>
-                                                        <td><input type="email" id="email" value="baesuzy123@gmail.com"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jenis Kelamin</td>
-                                                        <td>:</td>
-                                                        <td>
-                                                            <select id="gender">
-                                                                <option value="Perempuan" selected>Perempuan</option>
-                                                                <option value="Laki-laki">Laki-laki</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <button type="submit" class="edit-profile-button">Save Profile</button>
-                                        </form>
-                                    </div>
+                      
+                    <section id="data-polis" class="data-polis">
+                        <div class="main2">
+                            <div class="card2">
+                              <h2>Detail Polis : 140811000007</h2>
+                                  <div class="table-wrapper">
+                                    <table class="fl-table">
+                                          <thead>
+                                          <tr>
+                                              <th>Jenis Data Investasi</th>
+                                              <th>Total Unit</th>
+                                              <th>Harga Unit (**)</th>
+                                              <th>Nilai Unit (*)</th>
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                          <tr>
+                                              <td>Investra Equality Fund</td>
+                                              <td>1.380,008</td>
+                                              <td>Rp3.078,000</td>
+                                              <td>5.235,400,000</td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="3" style="font-size: 15px;">Investra Equality Fund</td>
+                                            <td>5.235,400,000 (***)</td>
+                                          </tr>
+                                          <tbody>
+                                      </table>
+                                </div>
+                                <div class="container-btn">
+                                    <a href="editprofile">
+                                        <button class="cetak-button">Cetak</button>
+                                    </a>
+                                    <a href="/profile">
+                                        <button class="back-button">Kembali</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    
+                    <section class="catatan" id="catatan">
+                        <div class="note">
+                            <h5 style="font-weight: bold;">Catatan : </h5>
+                            <p>1. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p>2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p>3. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </section>
 
 
     <footer class="footer-distributed">
@@ -193,17 +189,6 @@
                 menu.classList.toggle('bx-x');
                 navbar.classList.toggle('open');
             };
-
-            const form = document.getElementById("edit-profile-form");
-                form.addEventListener("submit", function (event) {
-                event.preventDefault(); 
-                const name = document.getElementById("name").value;
-                const card = document.getElementById("card").value;
-                const email = document.getElementById("email").value;
-                const gender = document.getElementById("gender").value;
-
-                alert("Profile updated successfully");
-            });
         </script>
 
 

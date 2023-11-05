@@ -67,7 +67,7 @@
   }
   
   .login a:hover {
-    color: #2F37A4;
+    color: #0198a3;
     font-weight: bold;
   }
   
@@ -76,7 +76,7 @@
     margin: 30px 0;
     padding: 10px;
     border: none;
-    background-color: #2F37A4;
+    background-color: #0198a3;
     color: #fff;
     font-size: 20px;
     border-radius: 10px;
@@ -125,7 +125,7 @@
   .register-link {
     text-decoration: none;
     background-color: #fff;
-    color: #2F37A4;
+    color: #0198a3;
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 1.2em;
@@ -133,14 +133,14 @@
   }
   
   .register-link:hover {
-    background-color: #2F37A4;
+    background-color: #0198a3;
     color: #fff;
   }
   
   /* Register Styles */
   .register {
     float: right;
-    background-image: linear-gradient(135deg, #23212f 5%, #2F37A4 95%);
+    background-image: linear-gradient(135deg, #23212f 5%, #0198a3 95%);
     height: 100%;
     color: #fff;
     border-radius: 0 10px 10px 0;
@@ -173,7 +173,7 @@
   }
   
   .register button:hover {
-    color: #2F37A4;
+    color: #0198a3;
     background-color: #fff;
     cursor: pointer;
   }

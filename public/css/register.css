@@ -66,7 +66,7 @@ input[type="checkbox"] {
 }
 
 .login a:hover {
-  color: #2F37A4;
+  color: #0198a3;
   font-weight: bold;
 }
 
@@ -75,7 +75,7 @@ input[type="checkbox"] {
   margin: 30px 0;
   padding: 10px;
   border: none;
-  background-color: #2F37A4;
+  background-color: #0198a3;
   color: #fff;
   font-size: 20px;
   cursor: pointer;

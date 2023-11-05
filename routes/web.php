@@ -76,6 +76,13 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 Route::get('/profile', function () {return view('nasabah.profilenasabah');});
 Route::get('/editprofile', function () {return view('nasabah.editprofilenasabah');});
 Route::get('/detailbayar', function () {return view('nasabah.detailbayar');});
+Route::get('/detailpolis', function () {return view('nasabah.detailpolis');});
+
+//Data Lengkap Nasabah
+Route::get('/historiperubahan', function () {return view('DataNasabah.histori-perubahan');});
+Route::get('/tagihanpremi', function () {return view('DataNasabah.tagihan-premi');});
+Route::get('/historiclaim', function () {return view('DataNasabah.histori-klaim');});
+Route::get('/historipembayaran', function () {return view('DataNasabah.histori-pembayaran');});
 
 // Route::get('/DataPersonal1', function () {return view('dashboard.DataPersonal1');});
 

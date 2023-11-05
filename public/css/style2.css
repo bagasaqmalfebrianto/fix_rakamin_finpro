@@ -50,7 +50,7 @@ header{
     padding: 15px 9%;
     z-index: 100000S;
     border-bottom: 1px solid #ddd;
-    background-color: #2F37A4;
+    background-color: #0198a3;
    
 }
 
@@ -143,20 +143,20 @@ header{
 
 #userDropdown:hover { 
     background-color: inherit;
-    outline-color: #2F37A4; 
+    outline-color: #0198a3; 
     color: grey;
 }
 
 #userDropdown:focus { 
    border-style: none !important;
-   outline-color:#2F37A4;
+   outline-color:#0198a3;
    background-color: inherit;
    color: grey;
 }
 
 #userDropdown:active{ 
    border-style: none !important;
-   outline-color: #2F37A4;
+   outline-color: #0198a3;
    background-color: inherit;
 }
 
@@ -189,7 +189,7 @@ td,tr{
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: #2F37A4;
+  background-color: #0198a3;
   color: white;
   cursor: pointer;
   padding: 13px;
@@ -535,7 +535,7 @@ td,tr{
 
 /* FOOTER STYLE */
 .footer-distributed{
-	background: #2F37A4;
+	background: #0198a3;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -748,7 +748,7 @@ td,tr{
         left: -100%;
         width: 300px;
         height: 100vh;
-        background: #2F37A4;
+        background: #0198a3;
         display: flex;
         align-items: center;
         flex-direction: column;
