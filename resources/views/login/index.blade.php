@@ -34,7 +34,7 @@
               <form action="/login" method="POST">
                 @csrf
                 <input type="email" id="email" name="email" placeholder="Email">
-                <input type="password" id="pass" name="pass" placeholder="Password"><br>
+                <input type="password" id="pass" name="password" placeholder="Password"><br>
                 <input type="checkbox"><span>Remember me</span>
                 <a href="#">Forgot password?</a>
                 <button>log in</button>
@@ -52,6 +52,6 @@
     </div>
 
     </div>
-		
+
 	</body>
 </html>

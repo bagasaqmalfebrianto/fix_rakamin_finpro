@@ -14,6 +14,7 @@ class LoginController extends Controller
     }
 
     public function authenticate(Request $request){
+        try {
         $credentials = $request->validate([
             'email'=>'required',
             'password'=>'required'
@@ -22,20 +23,22 @@ class LoginController extends Controller
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
 
-
-
-         if(auth()->user()->is_admin){
-            // return response()->json([
-            //     'status' => 'success',
-            //     'message' => 'Selamat, Anda telah Login',
-            // ]);
-                 return redirect()->intended('/TambahPengguna');
-
+            if(auth()->user()->is_admin){
+                return redirect()->intended('/TambahPengguna');
          }
         return redirect()->intended('/belanja');
 
         }
-        return back()->with('loginError','Login Failed');
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Terjadi kesalahan: ' . $e->getMessage(),
+        ]);
+    }
+
+        // return back()->with('loginError','Login Failed');
+
+
     }
 
     public function logout(Request $request){
