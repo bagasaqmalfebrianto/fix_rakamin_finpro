@@ -20,14 +20,13 @@
         <div class="card">
           <div class="card-header">
             <ul class="nav nav-pills card-header-pills menuprofil">
-
               <li class="nav-item active">
                 <a class="nav-link" href="ProfilPolis1">Tambah Pengguna</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" disabled>Pilih Polis</a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a class="nav-link" href="PenerimaManfaat1">Penerima Manfaat</a>
               </li>
               <li class="nav-item">
@@ -35,11 +34,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="RincianUnitLink1">Rincian Unit Link</a>
-              </li>
-
+              </li> --}}
             </ul>
           </div>
-
           <form action="/TambahPengguna" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
@@ -153,7 +150,7 @@
 
                                                 <div class="form-group col">
                                                                 <label>Email</label>
-                                                                <input class="form-control" type="text" name="email">
+                                                                <input class="form-control" type="text" name="email" readonly>
                                                             </div>
 
                                                             <div class="form-group col">
@@ -202,7 +199,8 @@
 
                                         <div class="form-group col">
                                             <label>Foto KTP</label>
-                                            <input class="form-control" type="file" name="foto_ktp">
+                                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                                            <input class="form-control" type="file" name="foto_ktp" id="foto_ktp" onchange="previewImage()">
                                         </div>
 
                                     </div>
@@ -211,7 +209,8 @@
 
                                     <div class="form-group col">
                                         <label>FOTO KK</label>
-                                        <input class="form-control" type="file" name="foto_kk">
+                                        <img class="img-previewkk img-fluid mb-3 col-sm-5">
+                                        <input class="form-control" type="file" name="foto_kk" type="file" id="foto_kk" onchange="previewImagekk()">
                                     </div>
 
 
@@ -222,7 +221,8 @@
 
                                     <div class="form-group col">
                                         <label>Foto Pribadi</label>
-                                        <input class="form-control" type="file" name="foto_pribadi">
+                                        <img class="img-previewpribadi img-fluid mb-3 col-sm-5">
+                                        <input class="form-control" type="file" name="foto_pribadi" id="foto_pribadi" onchange="previewImagepribadi()">
                                     </div>
 
 
@@ -250,6 +250,53 @@
     <!-- Tabel Data Polis -->
 
 </div>
+
+<script>
+
+    function previewImage(){
+        const image = document.querySelector('#foto_ktp');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = function(oFREvent){
+          imgPreview.src = oFREvent.target.result;
+        }
+      }
+
+      function previewImagekk(){
+        const image = document.querySelector('#foto_kk');
+        const imgPreview = document.querySelector('.img-previewkk');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = function(oFREvent){
+          imgPreview.src = oFREvent.target.result;
+        }
+      }
+
+      function previewImagepribadi(){
+        const image = document.querySelector('#foto_pribadi');
+        const imgPreview = document.querySelector('.img-previewpribadi');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = function(oFREvent){
+          imgPreview.src = oFREvent.target.result;
+        }
+      }
+    </script>
+
+
 @endsection
 
 @section('JS')

@@ -1,26 +1,23 @@
 <?php
 
-use App\Models\Cart;
 use App\Models\User;
-use App\Models\Iklan;
-use App\Models\Order;
-use App\Models\Barang;
-use App\Models\Berita;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\iotController;
 
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\IklanController;
+use Illuminate\Support\Facades\Route;
+
+// use App\Http\Controllers\CartController;
+// use App\Http\Controllers\IklanController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\BarangController;
-use App\Http\Controllers\BeritaController;
+// use App\Http\Controllers\BarangController;
+// use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\OrderItemController;
-use App\Http\Controllers\editStatusController;
+// use App\Http\Controllers\DashboardController;
+// use App\Http\Controllers\OrderItemController;
+// use App\Http\Controllers\editStatusController;
 use App\Http\Controllers\dataPenjualController;
 use App\Http\Controllers\dataUserController;
+use App\Http\Controllers\RingkasanPolisController;
+use App\Http\Controllers\RingkasanPolisUser;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -52,7 +49,7 @@ Route::get('/home', function () {
 
 //Dashboard
 
-Route::resource('/dashboard',DashboardController::class)->middleware('auth');
+// Route::resource('/dashboard',DashboardController::class)->middleware('auth');
 
 //Dashboard Admin
 
@@ -86,9 +83,9 @@ Route::get('/historipembayaran', function () {return view('DataNasabah.histori-p
 
 // Route::get('/DataPersonal1', function () {return view('dashboard.DataPersonal1');});
 
-Route::get('/RingkasanPolis', function () {
-    return view('RP.RingkasanPolis');
-});
+// Route::get('/RingkasanPolis', function () {
+//     return view('RP.RingkasanPolis');
+// });
 
 //DashboardAdmin
 Route::get('/TambahPengguna',[DashboardAdminController::class,'index'])->middleware('auth');
@@ -96,22 +93,28 @@ Route::post('/TambahPengguna',[DashboardAdminController::class,'store']);
 
 Route::get('/PilihPolis',[DashboardAdminController::class,'daftarPolis'])->middleware('auth');
 
+Route::post('/PilihPolis',[DashboardAdminController::class,'tambahdaftarPolis'])->middleware('auth');
+
+Route::resource('/RingkasanPolisAdmin',RingkasanPolisController::class)->middleware('auth');
+
+Route::resource('/RingkasanPolisUser',RingkasanPolisUser::class)->middleware('auth');
+
+Route::get('/RingkasanPolisAdmin/TambahPengguna/{id}', [DashboardAdminController::class,'show'])->middleware('auth');
+
+Route::post('/RingkasanPolisAdmin/TambahPengguna/{id}', [DashboardAdminController::class, 'TambahPengguna'])->middleware('auth');
+
+Route::get('/Pembayaran/{id}',[DashboardAdminController::class,'bayar'])->middleware('auth');
+
+Route::get('/Pembayaran/{id}',[DashboardAdminController::class,'bayar'])->middleware('auth');
+
+
+// Route::get('/Pembayaran',[DashboardAdminController::class,'asu'])->middleware('auth');
 
 
 
+// Route::resource('/RingkasanPolisUser',RingkasanPolisUser::class,'RingkasanPolisAdmin.create')->middleware('auth');
 
-
-
-
-
-
-
-
-
-
-
-
-
+//
 
 
 
@@ -142,11 +145,11 @@ Route::get('/TagihanPremi2', function () {return view('RT.TagihanPremi2');});
 Route::get('/HistoriKlaim2', function () {return view('RT.HistoriKlaim2');});
 Route::get('/HistoriPembayaran2', function () {return view('RT.HistoriPembayaran2');});
 
-Route::get('/Kamus', '\App\Http\Controllers\KamusController@index');
-Route::get('/Fitur', '\App\Http\Controllers\FeaturesController@index');
+// Route::get('/Kamus', '\App\Http\Controllers\KamusController@index');
+// Route::get('/Fitur', '\App\Http\Controllers\FeaturesController@index');
 
-Route::get('/Fasilitas', '\App\Http\Controllers\FormlinksController@index');
-Route::get('/Syarat', '\App\Http\Controllers\TypeofklaimsController@index');
+// Route::get('/Fasilitas', '\App\Http\Controllers\FormlinksController@index');
+// Route::get('/Syarat', '\App\Http\Controllers\TypeofklaimsController@index');
 Route::get('/Grafik', function () {
     return view('Fasilitas.Grafik');
 });

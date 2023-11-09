@@ -19,6 +19,17 @@
      <!-- Custom styles for this page -->
 
 
+    <!-- Custom styles for this template tabel -->
+    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/rpolis.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+
+
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -30,79 +41,6 @@
 <body>
     <div class="wrappermenu">
         <!-- Sidebar  -->
-        <nav id="sidebar" class="menu1">
-            <div id="dismiss">
-                <i class="fas fa-arrow-left"></i>
-            </div>
-
-            <div class="sidebar-header" style="background-color: #f7ba02">
-                <img src="images/logo.png" style="width: 170px">
-            </div>
-
-            <ul class="list-unstyled componentsmenu">
-            @can('polis')
-
-            <li class="">
-                <a href="RingkasanPolis" class="text-black">Ringkasan Polis</a>
-            </li>
-
-
-            <li>
-                <a href="#paymentSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">COMM Payment</a>
-                <ul class="collapse list-unstyled" id="paymentSubmenu">
-                    <li class="sub">
-                        <a href="TopUp">Top Up Single</a>
-                    </li>
-                    <li class="sub">
-                        <a href="Premi">Premi Lanjutan</a>
-                    </li>
-                </ul>
-            </li>
-            @endcan
-
-            @can('admin')
-
-            <li class="">
-                <a href="/RingkasanPolisAdmin" class="text-black">Ringkasan Polis</a>
-            </li>
-            <li>
-                <a href="/TambahPengguna">Tambah Pengguna</a>
-            </li>
-            @endcan
-                {{-- <li>
-                    <a href="#profilSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Profil Polis</a>
-                    <ul class="collapse list-unstyled" id="profilSubmenu">
-                        <li class="sub">
-                            <a href="ProfilPolis1">000000136651 - Andrian</a>
-                        </li>
-                        <li class="sub">
-                            <a href="ProfilPolis2">000000193121 - Rossy Rahmawati</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="#rincianSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Rincian Transaksi</a>
-                    <ul class="collapse list-unstyled" id="rincianSubmenu">
-                        <li class="sub">
-                            <a href="HistoriPerubahan1">000000136651 - Andrian</a>
-                        </li>
-                        <li class="sub">
-                            <a href="HistoriPerubahan2">000000193121 - Rossy Rahmawati</a>
-                        </li>
-                    </ul>
-                </li> --}}
-
-
-
-                {{-- <li>
-                    <a href="Fitur">Fitur</a>
-                </li>
-                <li>
-                    <a href="Kamus">Kamus</a>
-                </li> --}}
-            </ul>
-        </nav>
 
         <!-- Page Content  -->
         <div id="content">
@@ -162,63 +100,263 @@
                         </ul>
             </nav>
             <!-- akhir navbar atas -->
-            @yield('isi')
+
         </div>
 
 
     </div>
 
+{{-- ISI --}}
 
-    <div class="modal fade" id="datapolis" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Rincian Investasi (No. Polis : 000000136651)</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                  <div class="table-responsive text-center">
-                      <table class="table-sm table-bordered table-hover" id="Table1" width="100%" cellspacing="0">
-                        <thead class="bg-warning">
-                          <tr>
-                              <th>Jenis Dana Investasi</th>
-                              <th>Total Unit</th>
-                              <th>Harga Unit (**)</th>
-                              <th>Nilai Unit (*)</th>
-                          </tr>
-                        </thead>
-
-                        <tbody class="bg-light">
-                          <tr>
-                            <td>Investra Equity Fund</td>
-                            <td>1.380,0288</td>
-                            <td>Rp. 3.078,897</td>
-                            <td>5.235.402,78</td>
-                          </tr>
-                          <tr style="background-color: #e3df74;">
-                            <td colspan="3">Investra Equity Fund</td>
-                            <td>5.235.402,78(***)</td>
-                          </tr>
-                        </tbody>
-
-                      </table>
-                  </div> <!-- Akhir Tabel 1 -->
-                  <div style="margin-top: 5%;">
-                      <h5>Catatan :</h5>
-                      <h6>(*) Nilai Unit berdasarkan pada harga unit per tanggal 29/05/2020</h6>
-                      <h6>(**) Harga Unit dapat berubah sewaktu - waktu tergantung dari harga pembelian unit</h6>
-                      <h6>(***) Informasi di atas belum termasuk biaya - biaya tertunggak (bila ada)</h6>
-                  </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-warning">Cetak</button>
-            </div>
+<div id="isi">
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-circle-up float-right" style="color: black;"></i></button>
+    <!-- Isi profil Polis 1 -->
+        <div class="card">
+          <div class="card-header">
+            <ul class="nav nav-pills card-header-pills menuprofil">
+              <li class="nav-item active">
+                <a class="nav-link" href="/RingkasanPolisAdmin">Dashboard</a>
+              </li>
+              {{-- <li class="nav-item">
+                <a class="nav-link" href="#" disabled>Pilih Polis</a>
+              </li> --}}
+              {{-- <li class="nav-item">
+                <a class="nav-link" href="PenerimaManfaat1">Penerima Manfaat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="RincianAgen1">Rincian Agen</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="RincianUnitLink1">Rincian Unit Link</a>
+              </li> --}}
+            </ul>
           </div>
+          <form action="/RingkasanPolisAdmin/{{ $data_user->id }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('put')
+            <div class="card-body">
+                    <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Ubah Data Nasabah
+                                <span class="collapsed"> <i class="fas fa-chevron-circle-down float-right"> </i> </span>
+                                <span class="expanded"> <i class="fas fa-chevron-circle-up float-right"></i> </span>
+                            </button>
+                        </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+
+                            <div class="container-fluid">
+                                <div class="row">
+
+                                <div class="col-md-12 text-center">
+                                    <h6 style="font-weight: bolder;">SELAMAT DATANG</h6>
+                                </div>
+
+                                <div class="line"></div>
+
+
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+
+                                                <div class="form-group col">
+                                                                <label>No Rekening</label>
+                                                                <input class="form-control" type="text" name="no_rek" value="{{ old('no_rek',$data_user->no_rek) }}">
+                                                            </div>
+
+                                                            <div class="form-group col">
+                                                                <label>Mata Uang</label>
+                                                                <input class="form-control" type="text" value="Rupiah" readonly>
+                                                            </div>
+
+                                        <div class="form-group col">
+                                                                <label>Nama Lengkap</label>
+                                                                <input class="form-control" type="text" name="nama_lengkap" value="{{ old('nama_lengkap',$data_user->nama_lengkap) }}">
+                                                            </div>
+
+
+                                    </div>
+
+                                    {{-- HIDDEN POLIS AND LAC --}}
+                                    <input type="hidden" name="no_polis" value="nilai_no_polis">
+<input type="hidden" name="no_lac" value="nilai_no_lac">
+
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+
+
+                                                <div class="form-group col">
+                                                                <label>Nama Ibu Kandung</label>
+                                                                <input class="form-control" type="text" name="nama_ibu" value="{{ old('nama_ibu',$data_user->nama_ibu) }}">
+                                                            </div>
+                                                            <div class="form-group col">
+                                                                <label>NIK</label>
+                                                                <input class="form-control" type="text" name="nik" value="{{ old('nik',$data_user->nik) }}">
+                                                            </div>
+
+                                                                <div class="form-group col">
+                                                                <label>Tempat Lahir</label>
+                                                                <input class="form-control" type="text" name="tempat_lahir" value="{{ old('tempat_lahir',$data_user->tempat_lahir) }}">
+                                                            </div>
+
+
+                                    </div>
+
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+
+
+                                                <div class="form-group col">
+                                                                <label>Tanggal Lahir</label>
+                                                                <input class="form-control" type="text" name="tanggal_lahir" value="{{ old('tanggal_lahir',$data_user->tanggal_lahir) }}">
+                                                            </div>
+
+                                                            <div class="form-group col">
+                                                                <label>Alamat Korespondensi</label>
+                                                                <textarea class="form-control" style="height: 125px" name="alamat" >{{ old('alamat',$data_user->alamat) }}</textarea>
+                                                            </div>
+
+
+
+                                    </div>
+
+                                    <div class="line"></div>
+
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+
+
+                                                <div class="form-group col">
+                                                                <label>Telepon</label>
+                                                                <input class="form-control" type="text" name="no_telp" value="{{ old('no_telp',$data_user->no_telp) }}">
+                                                            </div>
+
+                                                            <div class="form-group col">
+                                                                <label>Telepon lain</label>
+                                                                <input class="form-control" type="text" name="no_telp2" value="{{ old('no_telp2',$data_user->no_telp2) }}">
+                                                            </div>
+
+
+                                    </div>
+
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+
+
+                                                <div class="form-group col">
+                                                                <label>Email</label>
+                                                                <input class="form-control" type="text" name="email" value="{{ old('email',$data_user->email) }}">
+                                                            </div>
+
+                                                            <div class="form-group col">
+                                                                <label>Email lain</label>
+                                                                <input class="form-control" type="text" name="email2" value="{{ old('email2',$data_user->email2) }}">
+                                                            </div>
+
+
+                                    </div>
+
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+
+
+                                                <div class="form-group col">
+                                                                <label>Ops</label>
+                                                                <input class="form-control" type="text" value="-" readonly>
+                                                            </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Card 3 -->
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Ringkasan
+                            <span class="collapsed"> <i class="fas fa-chevron-circle-down float-right"> </i> </span>
+                            <span class="expanded"> <i class="fas fa-chevron-circle-up float-right"></i> </span>
+                            </button>
+                        </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                                <div class="container">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+
+                                        <div class="form-group col">
+                                            <label>Foto KTP</label>
+                                            <input type="hidden" name="oldImage" value="{{ $data_user->foto_ktp }}">
+                                            @if($data_user->foto_ktp)
+                                                <img src="{{ asset('storage/'. $data_user->foto_ktp) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+
+                                            @else
+                                                <img class="img-preview img-fluid mb-3 col-sm-5">
+                                            @endif
+                                            <input type="file"  value="{{ $data_user->foto_ktp }}" id="foto_ktp" name="foto_ktp" onchange="previewImage()">
+                                            {{-- <input class="form-control" type="file" name="foto_ktp" id="foto_ktp" value="{{ $data_user->foto_ktp }}"> --}}
+                                        </div>
+
+                                    </div>
+
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+
+                                    <div class="form-group col">
+                                        <label>FOTO KK</label>
+                                        <input type="hidden" name="oldImage_kk" value="{{ $data_user->foto_kk }}">
+                                        @if($data_user->foto_kk)
+                                                <img src="{{ asset('storage/'. $data_user->foto_kk) }}" class="img-preview-kk img-fluid mb-3 col-sm-5 d-block">
+
+                                            @else
+                                                <img class="img-preview-kk img-fluid mb-3 col-sm-5">
+                                            @endif
+                                            <input type="file" value="{{ $data_user->foto_kk }}" id="foto_kk" name="foto_kk" onchange="previewImagekk()">
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+
+
+                                    <div class="form-group col">
+                                        <label>Foto Pribadi</label>
+                                        <input type="hidden" name="oldImage_pribadi" value="{{ $data_user->foto_pribadi }}">
+                                        @if($data_user->foto_pribadi)
+                                                <img src="{{ asset('storage/'. $data_user->foto_pribadi) }}" class="img-preview-pribadi img-fluid mb-3 col-sm-5 d-block">
+
+                                            @else
+                                                <img class="img-preview-pribadi img-fluid mb-3 col-sm-5">
+                                            @endif
+                                            <input type="file"  value="{{ $data_user->foto_pribadi }}" id="foto_pribadi" name="foto_pribadi" onchange="previewImagepribadi()">
+                                    </div>
+
+
+                                </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                    <!-- Akhir Card 3 -->
+                    </div>
+                    <!-- Akhir Accordion -->
+            </div>
+            <button type="submit" class="btn btn-primary">Create Post</button>
+        </form>
+          <!-- Akhir Card Body -->
         </div>
-    </div>
 
           <!-- Modal -->
        <!-- Modal Ubah Password -->
@@ -480,6 +618,49 @@
         </div><!-- /.modal -->
       <!-- Modal -->
 
+      <script>
+
+        function previewImage(){
+            const image = document.querySelector('#foto_ktp');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent){
+              imgPreview.src = oFREvent.target.result;
+            }
+        }
+        function previewImagekk(){
+            const image = document.querySelector('#foto_kk');
+            const imgPreview = document.querySelector('.img-preview-kk');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent){
+              imgPreview.src = oFREvent.target.result;
+            }
+        }
+        function previewImagepribadi(){
+            const image = document.querySelector('#foto_pribadi');
+            const imgPreview = document.querySelector('.img-preview-pribadi');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent){
+              imgPreview.src = oFREvent.target.result;
+            }
+        }
+            </script>
+
     <div class="overlay"></div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -491,7 +672,17 @@
     <!-- jQuery Custom Scroller CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-        @yield('JS')
-        <script src="js/js1.js"></script>
-</body>
-</html>
+
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+        <!-- Page level plugins -->
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
+        <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
+
+        <script src="../js/js1.js"></script>
+    </body>
+    </html>

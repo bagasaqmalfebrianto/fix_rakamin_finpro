@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="css/register.css">
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
         <link rel="shortcut icon" href="/front/img/logo.jpeg">
-	</head> 
+	</head>
 
 	<body>
 
@@ -30,7 +30,7 @@
                   <input type="text" name="no_polis" id="no_polis"  placeholder="Nomer Polis" autofocus required value="{{ old('no_polis') }}">
                   <input type="text" name="username" id="username"  placeholder="Username" autofocus required value="{{ old('username') }}">
                   <input type="text" name="email" id="email"  placeholder="Email" autofocus required value="{{ old('email') }}">
-                  <input type="hidden" name="is_admin" id="is_pembeli" autofocus required value="1">
+                  <input type="hidden" name="is_polis" id="is_pembeli" autofocus required value="1">
                   <div class="password-container">
                         <input required type="password" name="password" id="password" placeholder="Password">
                         <i class="ri-eye-fill" id="togglePassword1"></i>
@@ -45,9 +45,9 @@
               <span>Have an Account? <a href="/login" class="login-here">Login here.</a></span>
          </div>
       </div>
-      
+
     </div>
-		
+
 	</body>
     <script src="/admin_asset/vendor/jquery/jquery.min.js"></script>
     <script>

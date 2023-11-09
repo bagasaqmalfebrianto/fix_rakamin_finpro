@@ -2,12 +2,12 @@
 
 @section('title', 'Profil Polis - Data Personal')
 
-@section('css')
+@section('../css')
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="profilpolis.css">
 @endsection
 
-@section('isi')
+@section('../isi')
 <div id="isi">
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-circle-up float-right" style="color: black;"></i></button>
   <!-- Isi profil Polis 1 -->
@@ -49,15 +49,16 @@
                   </div>
 
                   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <form action="/PilihPolis" method="post" enctype="multipart/form-data">
+                    <form action="/RingkasanPolisAdmin/TambahPengguna/{id}" method="post" enctype="multipart/form-data">
                         @csrf
                     <div class="card-body">
 
                         <div class="container-fluid">
                             <div class="row">
                               <div class="col-md-12 text-center">
-                                   <h6 style="font-weight: bolder;">No. Polis : {{ $userData['no_polis']}}</h6>
+                                   <h6 style="font-weight: bolder;">No. Polis : {{ $urlId }}</h6>
                               </div>
+
 
                                 <div class="line"></div>
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-4">
@@ -153,7 +154,7 @@
                                       <div class="form-group col">
                                         <label>Foto KK</label>
                                         <input class="form-control" type="file" name="foto_kk">
-                                        <input class="form-control" type="text" name="user_id" value="{{ $userData['no_polis'] }}" hidden>
+                                        <input class="form-control" type="text" name="user_id" value="{{ $urlId }}" hidden>
                                     </div>
 
                                 </div>
@@ -277,3 +278,14 @@
 
 </div>
 @endsection
+
+@section('../JS')
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    <!-- Page level plugins -->
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>

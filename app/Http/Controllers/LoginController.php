@@ -26,7 +26,7 @@ class LoginController extends Controller
             if(auth()->user()->is_admin){
                 return redirect()->intended('/TambahPengguna');
          }
-        return redirect()->intended('/belanja');
+        return redirect()->intended('/RingkasanPolisUser');
 
         }
     } catch (\Exception $e) {

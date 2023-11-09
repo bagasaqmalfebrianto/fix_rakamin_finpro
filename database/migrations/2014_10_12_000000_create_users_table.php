@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('no_telp')->nullable();
             $table->string('no_telp2')->nullable();
             $table->string('email2')->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->nullable()->unique();
             $table->string('foto_ktp')->nullable();
             $table->string('foto_kk')->nullable();
             $table->string('foto_pribadi')->nullable();
@@ -34,6 +34,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->boolean('is_admin')->default(false);
+            $table->boolean('is_polis')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
